@@ -1,0 +1,32 @@
+h3.rh {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8em;
+    letter-spacing: -.5px;
+    margin: 0;
+    padding-bottom: 0px;
+    padding-top: 30px;
+    color: black;
+    
+}
+
+p.rh {
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: -.5px;
+    margin: 0;
+    font-size: .8em;
+    color: black;
+}
+
+a.rh {
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: -.5px;
+    font-size: .8em;
+    color: black;
+    text-decoration: none;
+}
+
+div.rh {
+    background-color: blue;
+    padding: 10px;
+}

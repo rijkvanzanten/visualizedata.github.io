@@ -1,0 +1,27 @@
+body{
+	background-color:black;
+	font-family: 'Wire One', sans-serif;
+	color:white;
+}
+#greet{
+	text-align:center;
+	padding:5px;
+	margin:30px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	font-size:60px;
+}
+#chat{
+	font-size:19px;
+	font-family: 'Open Sans', sans-serif;
+	margin:60px;
+}
+#chat a{
+	text-decoration:none;
+	color:blue;
+}
+
+#chat a:hover{
+	color:lightblue;
+}
+
