@@ -99,6 +99,11 @@
     }
     
     .unpaidPosition {
+        background-image: url("../images/paid.png");
+        background-repeat: no-repeat;
+        padding-left: 20px;
+        background-size: 15px 15px;
+        background-position: left;
         font-family: 'Ubuntu', sans-serif;
         font-size: 20px;
         font-weight: 700;
@@ -107,6 +112,11 @@
     }
     
     .timeSensitive {
+        background-image: url("../images/urgent.png");
+        background-repeat: no-repeat;
+        padding-left: 20px;
+        background-size: 15px 15px;
+        background-position: left;
         font-family: 'Ubuntu', sans-serif;
         font-size: 20px;
         font-weight: 700;
