@@ -15,10 +15,11 @@
 </head>
 
 <body>
-  <div class="container">
+  <div id="headerBar"><div><img src="images/Parsons_Logo1_Small_RGB.png" height=30px /></div></div>
+  <div class="content-container">
     <h1 class = "title">Data Work</h1>
         <div id="categories">
-          <span class="category"><a href="#">Jobs</a></span>
+          <span class="category"><a href="#">Positions</a></span>
           <span class="category"><a href="#">Competitions</a></span>
           <span class="category"><a href="#">Resources</a></span>
         </div>
@@ -43,12 +44,23 @@
   <!--<li>Contact Email</li>-->
   <!--</ul>-->
   
-  </div>
       
   <!-- call d3 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
   <!--<script src="js/scripts.js"></script>-->
   <script>
+  
+        // var tags = ["newSchool", "parttimePosition", "fulltimePosition", "grantFellowship", "eligibleAcademic"];
+        
+        // function searchTags (matchTags, dataTags) {
+        //   for (var i = 0; i < matchTags.length; i++) {
+        //     //debugger;
+        //     if (dataTags[matchTags[i]]) {
+        //       return matchTags[i]+"-"+dataTags[matchTags[i]];
+        //     }
+        //   }
+        
+        // }
     
     d3.json("../data/datawork.json", ready);
 
@@ -59,7 +71,16 @@
           .data(data)
           .enter()
           .append("div")
-          .attr("class", "content");
+          .attr("class", function(d) {
+            if (d.dataSource || d.dataResource) {
+              return "content dataResource";
+            } else if (d.dataCompetition) {
+              return "content dataCompetition";
+            } else {
+              return "content position";
+            }
+          });
+        
           
         container.append("h1")
           .attr("class", "orgName")
@@ -73,10 +94,56 @@
           .attr("class", "description")
           .text(function(d) { return d.description; });
           
+        container.append("p")
+          .attr("class", "contactName")
+          .text(function(d) { 
+            if (d.contactName != "") {
+            return "Contact: " + d.contactName + ", " + d.contactEmail; 
+            }
+        });
+        
+        container.append("p")
+          .attr("class", "url")
+          .text(function(d) { 
+            if (d.url != "") {
+            return "Website: " + d.url; 
+            }
+        });
+        
+        var thirdCol = container.append("div")
+          .attr("class", "thirdCol");
+        
+        thirdCol.append("p")
+          .attr("class", "unpaidPosition")
+          .text(function(d) { 
+            if (d.parttimePosition || d.fulltimePosition) { 
+              if (d.unpaidPosition == false) {
+              return "Paid"; 
+              }
+            }
+        });
+        
+        thirdCol.append("p")
+          .attr("class", "timeSensitive")
+          .text(function(d) { 
+
+            if (d.timeSensitive == true) { 
+              return "Urgent"; 
+            }
+        });
+        
         
     }
+  
       
   </script>
+  
+  <div class="tag-container">
+        <a href="#"><span class="tag">Academic Eligible</span></a> <a href="#"><span class="tag">Part-time</span></a> <a href="#"><span class="tag">New School Affiliated</span></a>
+  </div>
+
+  
+  </div>
   
 </body>
 </html>
