@@ -50,17 +50,21 @@
   <!--<script src="js/scripts.js"></script>-->
   <script>
   
-        // var tags = ["newSchool", "parttimePosition", "fulltimePosition", "grantFellowship", "eligibleAcademic"];
+        var tags = ["newSchool", "parttimePosition", "fulltimePosition", "grantFellowship", "eligibleAcademic"];
         
-        // function searchTags (matchTags, dataTags) {
-        //   for (var i = 0; i < matchTags.length; i++) {
-        //     //debugger;
-        //     if (dataTags[matchTags[i]]) {
-        //       return matchTags[i]+"-"+dataTags[matchTags[i]];
-        //     }
-        //   }
-        
-        // }
+        function searchTags (matchTags, dataTags) {
+          var theseTags = [];
+          for (var i = 0; i < matchTags.length; i++) {
+            if (dataTags[matchTags[i]]) {
+              theseTags.push(matchTags[i]);
+            }
+          }
+          var tagString = "";
+          for (var i = 0; i < theseTags.length; i++) {
+            tagString = tagString + " " + theseTags[i];
+          }
+          return tagString;
+        }
     
     d3.json("../data/datawork.json", ready);
 
@@ -132,7 +136,12 @@
             }
         });
         
-        
+                var tagContainer = container.append("div")
+          .attr("class", "tag-container")
+          .text(function(d) {
+            return searchTags(tags, d);
+          });
+          
     }
   
       
