@@ -1,0 +1,28 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.weeklyDeets {
+	padding-left: 1em; 
+}
+
+.noClass {
+	color: red;
+}
+
+h4 {
+	margin-bottom: 0; 
+}
+
+ul, p {
+	margin-top: 0.25em; 
+}
+
+ul {
+    list-style:none;
+    padding-left:0;
+}​
+
+body, .code {
+	font-family: Courier;
+}

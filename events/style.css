@@ -1,0 +1,132 @@
+
+/*whole stur*/
+html, body{
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 940px;
+}
+
+
+
+
+/*header*/
+.header{
+        height: 200px;
+        font-family: 'Oswald', sans-serif;
+
+
+}
+
+.header .container{
+    text-align: 
+    position: relative;
+    top: 100px;
+}
+
+/*left-filter*/
+.filterleft .container{
+    font-family: 'Oswald', sans-serif;
+    margin 0 auto;
+    position:relative;
+    left: 140px;
+    display: inline;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+
+
+/*table*/
+
+
+table {
+    font-family: 'Oswald', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 20px;
+
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+
+
+
+.btn {
+ background-color:#dddddd;
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    float:left;
+    /*margin-left: 75px;*/
+        font-family: 'Oswald', sans-serif;
+
+}
+
+.btn:hover{
+    background-color: #D22630;
+    color :  white;
+}
+.btnright:hover{
+    background-color: #D22630;
+    color :  white;
+}
+.btnright{
+     color:black;
+ background-color:#dddddd;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    float:right;
+    /*margin-right: 90px;*/
+        font-family: 'Oswald', sans-serif;
+
+    
+}
+
+
+.eventsmeetup{
+    position: relative;
+    top: 100px;
+    margin-top: 50px;
+}
+
+.eventsmeetup .container{
+        font-family: 'Oswald', sans-serif;
+
+}
+
+.eventsmeetup .container {        
+    color:#D22630;
+    text-align: center;
+    text-decoration: none;
+    padding: 50px;
+    margin: 0 auto;
+    background-color: ;
+
+}
+
+.eventsmeetup .container{
+        text-decoration: none;
+        
+        
+        
+}
+
+.b{
+    background-color: #D22630;
+    color:white;
+}
