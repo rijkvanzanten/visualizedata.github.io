@@ -136,8 +136,8 @@
             }
         });
         
-                var tagContainer = container.append("div")
-          .attr("class", "tag-container")
+                var tagContainer = container.append("span")
+          .attr("class", "tag")
           .text(function(d) {
             return searchTags(tags, d);
           });
