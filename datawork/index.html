@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>HTML5 Template</title>
+  <title>Data Work</title>
   <meta name="description" content="HTML5 template">
   <meta name="author" content="The New School, Parsons School of Design">
 
@@ -92,7 +92,7 @@
           
         container.append("h3")
           .attr("class", "dateAdded")
-          .text(function(d) { return d.dateAdded; });
+          .text(function(d) { return "Added " + d.dateAdded; });
           
         container.append("p")
           .attr("class", "description")
@@ -136,8 +136,8 @@
             }
         });
         
-                var tagContainer = container.append("div")
-          .attr("class", "tag-container")
+                var tagContainer = container.append("span")
+          .attr("class", "tag")
           .text(function(d) {
             return searchTags(tags, d);
           });
