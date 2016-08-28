@@ -8,11 +8,75 @@
   <meta name="description" content="HTML5 template">
   <meta name="author" content="The New School, Parsons School of Design">
 
-  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i,700" rel="stylesheet">
+
 </head>
 
 <body>
+  <div class="container">
+    <h1 class = "title">Data Work</h1>
+        <div id="categories">
+          <span class="category"><a href="#">Jobs</a></span>
+          <span class="category"><a href="#">Competitions</a></span>
+          <span class="category"><a href="#">Resources</a></span>
+        </div>
+      
+      <div id="autoContent">
+      </div>
+      
+  <!--<ul class=buttons> Organized by-->
+  <!--<li>Organization Name</li>-->
+  <!--<li>Data Source and Resources</li>-->
+  <!--<li>Data Competition</li>-->
+  <!--<li>Position</li>-->
+  <!--<li>New School Affiliated</li>-->
+  <!--<li>Paid and Unpaid</li>-->
+  <!--<li>Full and Part Time</li>-->
+  <!--<li>Grants and Fellowships</li>-->
+  <!--<li>Eligibility for Academic Credit</li>-->
+  <!--<li>Date Added</li>-->
+  <!--<li>Time Sensitive</li>-->
+  <!--<li>Description</li>-->
+  <!--<li>Contact Name</li>-->
+  <!--<li>Contact Email</li>-->
+  <!--</ul>-->
   
+  </div>
+      
+  <!-- call d3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
   <!--<script src="js/scripts.js"></script>-->
+  <script>
+    
+    d3.json("../data/datawork.json", ready);
+
+    function ready(error, data) {
+        if (error) throw "error loading data";
+        
+        var container = d3.select("#autoContent").selectAll("div")
+          .data(data)
+          .enter()
+          .append("div")
+          .attr("class", "content");
+          
+        container.append("h1")
+          .attr("class", "orgName")
+          .text(function(d) { return d.organizationName; });
+          
+        container.append("h3")
+          .attr("class", "dateAdded")
+          .text(function(d) { return d.dateAdded; });
+          
+        container.append("p")
+          .attr("class", "description")
+          .text(function(d) { return d.description; });
+          
+        
+    }
+      
+  </script>
+  
 </body>
 </html>
