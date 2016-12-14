@@ -3,13 +3,13 @@
 <style>
 
 .bar {
-  fill: #7fbf7b;
+  fill : #b2abd2;
 }
 
-/*.lines {
-  fill: black;
+.firstCat {
+  fill: #fdb863;
 }
-*/
+
 .axis--x path {
   display: none;
 }
@@ -44,24 +44,26 @@ var svg = d3.select("svg"),
 
 var xlabs = ["Answered all questions", "Clearly explained diagnosis", "Elicited necessary information", "Helped navigate system", "Made comprehensive plan", "Scheduled appropriate follow-ups"];
 
+var xdom = [1, 2, 3, 4, 5, 6]
+
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-// var x = d3.scale.ordinal().domain(xlabs).rangePoints([0, width]),
     y = d3.scaleLinear().rangeRound([height, 0]);
+
+var xShow = d3.scaleBand()
+    .domain(xlabs)
+    .range([0, width]);
 
 var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var xdom = [1, 2, 3, 4, 5, 6]
-
   x.domain(xdom.map(function(d) { return d; }));
-  // x.range(xlabs.map(function(d) { return d; }));
 
   y.domain([0, 2]);
 
   g.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(xShow));
 
   g.append("g")
       .attr("class", "axis axis--y")
@@ -77,6 +79,7 @@ var xdom = [1, 2, 3, 4, 5, 6]
       .data(overall)
       .enter().append("rect")
       .attr("class", "bar")
+      .classed("firstCat", function(d, i) { return i < 3 })
       .attr("x", function(d, i) { return x(i + 1); })
       .attr("y", function(d) { return y(d); })
       .attr("width", x.bandwidth())
@@ -90,7 +93,17 @@ var xdom = [1, 2, 3, 4, 5, 6]
       .attr("x2", function(d, i) { return x(i + 1) + x.bandwidth(); })
       .attr("y2", function(d) { return y(d); })
       .attr("stroke-width", 3)
-      .attr("stroke", "#7b3294");
+      .attr("stroke", "#5e3c99");
+
+  g.selectAll(".firstLines")
+      .data(overall.slice(0, 3))
+      .enter().append("line")
+      .attr("x1", function(d, i) { return x(i + 1); })
+      .attr("y1", function(d) { return y(d); })
+      .attr("x2", function(d, i) { return x(i + 1) + x.bandwidth(); })
+      .attr("y2", function(d) { return y(d); })
+      .attr("stroke-width", 3)
+      .attr("stroke", "#e66101");
 
 var transit = function(i){
   g.selectAll(".bar")
