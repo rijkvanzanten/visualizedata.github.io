@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         #firstHeading {
             font-size: 100%;
         }
@@ -37,73 +37,115 @@
 
         // var meetings  ;
         var meetings = [{
-            "_id": {
-                "loca": [40.7355145, -74.0031001]
-            },
-            "meets": [{
-                "meetingName": "PERRY STREET WORKSHOP",
-                "meetingHouse": "",
-                "meetingAddress1": "50 Perry Street, Ground Floor,",
-                "meetingAddress2": "(Betw. 7th Avenue South &amp; West 4th Street) NY 10014",
-                "borough": "Manhattan",
-                "meetingDetails": "No 8:30 or 10:15 1st Wed of month due to Bus. meeting Wed.10:15pm=No BB 1st Wed.",
-                "meetingWheelchair": ""
-            }],
-            "deets": [{
-                "days": ["Tuesdays", "Tuesdays", "Tuesdays", "Tuesdays", "Tuesdays", "Tuesdays", "Tuesdays", "Tuesdays"],
-                "startTimes": ["7:30 AM", "9:00 AM", "12:15 PM", "2:30 PM", "4:00 PM", "6:00 PM", "8:30 PM", "10:15 PM"],
-                "meetingType": ["C", "C", "S", "C", "C", "C", "C", "C"],
-                "specialInterest": ["", "", "", "", "", "", "", ""]
+            _id: { loca: [40.7355145, -74.0031001] },
+            meetingGroup: [{
+                meetingName: 'PERRY STREET WORKSHOP',
+                meetingHouse: '',
+                meetingAddress1: '50 Perry Street, Ground Floor,',
+                meetingAddress2: '(Betw. 7th Avenue South &amp; West 4th Street) NY 10014',
+                borough: 'Manhattan',
+                meetingDetails: 'No 8:30 or 10:15 1st Wed of month due to Bus. meeting Wed.10:15pm=No BB 1st Wed.',
+                meetingWheelchair: '',
+                meetings: [{
+                        day: 'Tuesday',
+                        startTime: '7:30 AM',
+                        meetingType: 'C',
+                        specialInterest: ''
+                    },
+                    {
+                        day: 'Tuesday',
+                        startTime: '9:00 AM',
+                        meetingType: 'C',
+                        specialInterest: ''
+                    },
+                    {
+                        day: 'Tuesday',
+                        startTime: '12:15 PM',
+                        meetingType: 'S',
+                        specialInterest: ''
+                    },
+                    {
+                        day: 'Tuesday',
+                        startTime: '2:30 PM',
+                        meetingType: 'C',
+                        specialInterest: ''
+                    },
+                    {
+                        day: 'Tuesday',
+                        startTime: '4:00 PM',
+                        meetingType: 'C',
+                        specialInterest: ''
+                    },
+                    {
+                        day: 'Tuesday',
+                        startTime: '6:00 PM',
+                        meetingType: 'C',
+                        specialInterest: ''
+                    },
+                    {
+                        day: 'Tuesday',
+                        startTime: '8:30 PM',
+                        meetingType: 'C',
+                        specialInterest: ''
+                    },
+                    {
+                        day: 'Tuesday',
+                        startTime: '10:15 PM',
+                        meetingType: 'C',
+                        specialInterest: ''
+                    }
+                ]
             }]
         }];
+
 
         function makeContent(cont) {
             var contentHolder = '<div id="content">' +
                 '<div id="siteNotice">' +
                 '</div>';
-            for (var i = 0; i < cont.meets.length; i++) {
+            for (var i = 0; i < cont.meetingGroup.length; i++) {
                 contentHolder = contentHolder + '<h1 id="firstHeading" class="firstHeading">';
-                contentHolder = contentHolder + cont.meets[i].meetingName + '</h1>';
-                if (cont.meets[i].meetingHouse.length > 0) {
-                    contentHolder = contentHolder + '<p>' + cont.meets[i].meetingHouse + '<br>';
+                contentHolder = contentHolder + cont.meetingGroup[i].meetingName + '</h1>';
+                if (cont.meetingGroup[i].meetingHouse.length > 0) {
+                    contentHolder = contentHolder + '<p>' + cont.meetingGroup[i].meetingHouse + '<br>';
                 }
-                contentHolder = contentHolder + cont.meets[i].meetingAddress1.substr(0, cont.meets[i].meetingAddress1.indexOf(',')) + '<br>';
-                contentHolder = contentHolder + cont.meets[i].meetingAddress2 + '</p>';
+                contentHolder = contentHolder + cont.meetingGroup[i].meetingAddress1.substr(0, cont.meetingGroup[i].meetingAddress1.indexOf(',')) + '<br>';
+                contentHolder = contentHolder + cont.meetingGroup[i].meetingAddress2 + '</p>';
                 contentHolder = contentHolder + '<p><b>Tuesday meetings: </b><br>';
-                for (var j = 0; j < cont.deets[i].startTimes.length; j++) {
+                for (var j = 0; j < cont.meetingGroup[i].meetings.length; j++) {
                     var mt, si;
-                    if (cont.deets[i].meetingType[j] == "BB") {
+                    if (cont.meetingGroup[i].meetings[j].meetingType == "BB") {
                         mt = "Big Book ";
                     }
-                    else if (cont.deets[i].meetingType[j] == "B") {
+                    else if (cont.meetingGroup[i].meetings[j].meetingType == "B") {
                         mt = "Beginners ";
                     }
-                    else if (cont.deets[i].meetingType[j] == "C") {
+                    else if (cont.meetingGroup[i].meetings[j].meetingType == "C") {
                         mt = "Closed Discussion ";
                     }
-                    else if (cont.deets[i].meetingType[j] == "S") {
+                    else if (cont.meetingGroup[i].meetings[j].meetingType == "S") {
                         mt = "Step ";
                     }
-                    else if (cont.deets[i].meetingType[j] == "T") {
+                    else if (cont.meetingGroup[i].meetings[j].meetingType == "T") {
                         mt = "Tradition ";
                     }
-                    else if (cont.deets[i].meetingType[j] == "O") {
+                    else if (cont.meetingGroup[i].meetings[j].meetingType == "O") {
                         mt = "Open Meeting ";
                     }
-                    else if (cont.deets[i].meetingType[j] == "OD") {
+                    else if (cont.meetingGroup[i].meetings[j].meetingType == "OD") {
                         mt = "Open Discussion ";
                     }
                     else {
                         mt = "";
                     }
 
-                    if (cont.deets[i].specialInterest[j] != '') {
-                        si = cont.deets[i].specialInterest[j]
+                    if (cont.meetingGroup[i].meetings[j].specialInterest != '') {
+                        si = cont.meetingGroup[i].meetings[j].specialInterest
                     }
                     else {
                         si = ''
                     }
-                    contentHolder = contentHolder + cont.deets[i].startTimes[j] + ' ' + mt + si + '<br>';
+                    contentHolder = contentHolder + cont.meetingGroup[i].meetings[j].startTime + ' ' + mt + si + '<br>';
                 }
                 contentHolder = contentHolder + '</p>';
                 contentHolder = contentHolder + '<div class="iw-bottom-gradient"></div>';
