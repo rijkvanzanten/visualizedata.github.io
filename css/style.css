@@ -25,3 +25,15 @@ body{
 
 /* #people {width: 100%; height: 100%; background: red; position:absolute;} */
 /* #work {width: 100%; height: 100%; background: blue; display: none; position:absolute;} */
+
+#fixedszP {
+  oobject-fit: fill;
+  min-width: 100%;
+  /* height: 500px; */
+}
+
+#fixedszW {
+  object-fit: fill;
+  width: 750px;
+  /* height: 500px; */
+}

@@ -153,7 +153,7 @@ indiv = `
 gEntry = `
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#" data-uid="{3}" data-idx="{4}"><img class="card-img-top" src={0} alt=""></a>
+            <a href="#" data-uid="{3}" data-idx="{4}"><img class="card-img-top" src="assets/img_work/{0}" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#" data-uid="{3}" data-idx="{4}">{1}</a>
@@ -165,6 +165,93 @@ gEntry = `
 `;
 
 iEntry = `
+      <!-- Portfolio Item Heading -->
+      <h1 class="my-4">"{1}"
+      </h1>
+
+      <!-- Portfolio Item Row -->
+      <div class="row">
+
+        <div class="col-md-8">
+          <img class="img-fluid" id="fixedszP" src="assets/img_work/{0}" alt="">
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3">Project Description</h3>
+          <p>{3}</p>
+          <!--
+          <h3 class="my-3">Project Details</h3>
+          <ul>
+            <li>Lorem Ipsum</li>
+            <li>Dolor Sit Amet</li>
+            <li>Consectetur</li>
+            <li>Adipiscing Elit</li>
+          </ul> -->
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+      <!-- Related Projects Row -->
+      <!-- 
+      <h3 class="my-4">Related Projects</h3>
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+      </div>
+      -->
+
+        &nbsp
+        <div class="row">
+        <div class="col-md-8">
+          <img class="img-fluid" id="fixedszP" src="assets/img_people/{4}" alt="">
+        </div>
+        
+        <div class="col-md-4">
+          <h3 class="my-3">{5} 
+            <a href="mailto:{7}"> <img height="20" src="assets/envelope.svg" title="Email"></a>
+            <a href="{8}"> <img height="20" src="assets/home.svg" title="Personal Site"></a>
+            <a href="{2}"> <img class="my-4" height="20" src="assets/link.svg" title="Link to Project"></a>
+          </h3>
+          <p>{6}</p>
+          
+        </div>      
+      </div>
+
+
+
+
+
+
+
+      <!-- /.row -->
+`;
+
+iEntryBAK = `
       <!-- Portfolio Item Heading 
       <h1 class="my-4">Page Heading
         <small>Secondary Text</small>
@@ -172,54 +259,60 @@ iEntry = `
 
       <!-- Portfolio Item Row -->
       <div class="row">
-        <h3 class="my-4">{1}  </h3>
+        <h3 class="my-4">"{1}"</h3>
         
-        <!--
         <div class="col-md-8 wc">
-          <img class="img-fluid" src="{0}" alt="">
-        </div>
+          <img class="img-fluid" src="assets/img_work/{0}" alt="">
+        </div> 
         <div class="col-md-4 wc">
+   
           <h3 class="my-3">A Collaboration With</h3>
           <ul>
             <li>Michael Wolf</li>
             <li>Vivian Westwood</li>
             <li>Dolly Parton</li>
-            <li>Benford Hopscotch</li>
-            <li>Robot #5</li>
             <li>Each would be</li>
             <li>a link to that</li>
             <li>persons first project.</li>
-          </ul>
-        </div>  -->
+          </ul> 
+        </div> 
         
         
- 	<center class="col-md-12 nc"><div class="col-md-8">
-          <img class="img-fluid" src="{0}" alt=""> </div>
-        </center>
+ 	<!-- <center class="col-md-12 nc">
+ 	  <div class="col-md-8">
+            <img class="img-fluid" id="fixedszW" src="assets/img_work/{0}" alt=""> 
+          </div>
+          <br>
+          <p>{3}</p>
+        </center> -->
         
         
           &nbsp
-          <p>{3}</p>
   
-        <div class="col-md-8">
-          <img class="img-fluid" src="{4}" alt="">
+        <div class="col-md-7">
+          <img class="img-fluid" id="fixedszP" src="assets/img_people/{4}" alt="">
         </div>
+        
         <div class="col-md-4">
           <h3 class="my-3">{5} 
-            <a href="{7}"> <img height="20" src="assets/envelope.svg" title="Email"></a>
+            <a href="mailto:{7}"> <img height="20" src="assets/envelope.svg" title="Email"></a>
             <a href="{8}"> <img height="20" src="assets/home.svg" title="Personal Site"></a>
             <a href="{2}"> <img class="my-4" height="20" src="assets/link.svg" title="Link to Project"></a>
           </h3>
           <p>{6}</p>
           
-        </div>      </div>
+        </div>      
+      </div>
       <!-- /.row -->
 
+      
       <!-- Related Projects Row -->
-      <h3 class="my-4">Related Projects (How are we doing this?)</h3>
+      <!-- <h3 class="my-4">Related Projects (How are we doing this?)</h3> -->
+      <h3 class="my-4"></h3>
 
       <div class="row">
-
+      
+        <!--
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
             <img class="img-fluid" src="http://placehold.it/500x300" alt="">
@@ -242,7 +335,7 @@ iEntry = `
           <a href="#">
             <img class="img-fluid" src="http://placehold.it/500x300" alt="">
           </a>
-        </div>
+        </div> -->
 
       </div>
       <!-- /.row -->

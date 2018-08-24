@@ -11,9 +11,9 @@ function loadIndiv() {
     var idx = parseInt($(lastClick).attr("data-idx"));
     $("#view").html(indiv);
     var person = window[uid];
-    var proj = window[uid]["projects"][idx];
-    $("#entryContainer").append(iEntry.format(proj.photoUrl, proj.heading, proj.workUrl, proj.subHead, person.photo, 
-      person.name, person.bio, person.email, person.site));
+    var proj = window[uid]["work"][idx];
+    $("#entryContainer").append(iEntry.format(proj.photoUrl, proj.heading, proj.workUrl, proj.desc, person.photoName, 
+      person.name, person.bio, person.email, person.personalUrl));
     // $("#work").attr("src", "assets/startbootstrap-portfolio-item-gh-pages/index.html?uid=" + data.uid + "&work="+ data.idx) 
 }
 
@@ -24,7 +24,7 @@ function showEntry() {
     
     if (isOnScreen($("#foot")) && curProj < projects.length) {
         var data = projects[curProj];
-        var html = gEntry.format(data.photoUrl, data.heading, data.desc, data.uid, data.idx);
+        var html = gEntry.format(data.photoUrl, data.heading, data.subHead, data.uid, data.idx);
         $(html).appendTo(".row").show(100);
         $(".row > div:last  a").click(function() {
           lastClick = this;
@@ -82,7 +82,7 @@ $(document).ready(function() {
    
     // assemble list of projects
     entryData.forEach(function(uid) {
-      window[uid].projects.forEach(function(proj, idx){
+      window[uid].work.forEach(function(proj, idx){
         proj.uid = uid;  // add unique key
         proj.idx = idx;
         projects.push(proj);
