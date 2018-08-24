@@ -1,0 +1,27 @@
+.portfolio-item {
+    opacity: 0; 
+    
+    /* -webkit-transition: opacity .5s ease-in; */
+    /*    -moz-transition: opacity .5s ease-in; */
+    /*     -ms-transition: opacity .5s ease-in; */
+    /*      -o-transition: opacity .5s ease-in; */
+    /*         transition: opacity .5s ease-in; */
+}
+
+body{
+  /* background: linear-gradient(#81989D,#FF787C); */
+  /* background: linear-gradient(to bottom right, #AB987A, #FF533D); */
+  /* background: linear-gradient(to bottom right, #1BBBB2, #36B8E9); */
+  /* background: linear-gradient(170deg, #F5CE28, #F2EEE2, #F2EEE2); */
+  /* -webkit-filter: -webkit-gradient(to bottom right, right 10%, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0))); */
+}
+
+#work {
+    width: 100%;
+    border: none;
+    height: calc(100vh + 30px);
+    overflow: hidden;
+}
+
+/* #people {width: 100%; height: 100%; background: red; position:absolute;} */
+/* #work {width: 100%; height: 100%; background: blue; display: none; position:absolute;} */
