@@ -1,105 +1,100 @@
-/*
-Locates all student work objects in global namespace.
-Inits page.
-*/
+var projectdata = [];
+var studentdata = [];
 
-curProj = 0; // current entry
-lastClick = null;
+d3.queue()
+  .defer(d3.json, "/json/projectdata.json")
+  .defer(d3.json, "/json/studentdata.json")
+  .await(analyze);
 
-function loadIndiv() {
-    var uid = $(lastClick).attr("data-uid");
-    var idx = parseInt($(lastClick).attr("data-idx"));
-    $("#view").html(indiv);
-    var person = window[uid];
-    var proj = window[uid]["work"][idx];
-    $("#entryContainer").append(iEntry.format(proj.photoUrl, proj.heading, proj.workUrl, proj.desc, person.photoName, 
-      person.name, person.bio, person.email, person.personalUrl));
-    // $("#work").attr("src", "assets/startbootstrap-portfolio-item-gh-pages/index.html?uid=" + data.uid + "&work="+ data.idx) 
-}
+function analyze(error, projects, students) {
+  if (error) {
+    console.log(error);
+  }
 
-// Dynamically load/show entries when they enter the viewport
-function showEntry() {
-    if (! $('#group').length ) // run load-on-sroll only when ID is present
-      return;
-    
-    if (isOnScreen($("#foot")) && curProj < projects.length) {
-        var data = projects[curProj];
-        var html = gEntry.format(data.photoUrl, data.heading, data.subHead, data.uid, data.idx);
-        $(html).appendTo(".row").show(100);
-        $(".row > div:last  a").click(function() {
-          lastClick = this;
-          loadIndiv();
-        }); // set anchors in entry to load work   
-        
-        
-        $("#foot").remove(); // move foot to bottom
-        $(foot).appendTo(".row");
-        
-        $(".row > div").css("opacity", "1");
-        curProj++;
-        // console.log(curProj);
-        // console.log(isOnScreen($("#foot")));
-    }
-}
+  // console.log(projects);
+  // console.log(students);
 
-function onScroll() {
-    setInterval(showEntry, 200);  // Strangely this is the ratified way to deal with async file loads. Seems wasteful.
-}
+  projectdata = projects;
+  studentdata = students;
 
-// Changing in one div messes with the nav buttons.  Hardcode for each page.
-function onURLChange() {
-    //alert(window.location.href);
-    if (window.location.href.search("#") == -1) {
-      $("#view").html(group);
-      $(foot).appendTo(".row");
-      curProj = 0;
-    } else {
-      if (lastClick == null) {
-        window.location.href = "index.html";
-      } else {
-        loadIndiv();
+  // Join the Arrays
+  //  Loop through the studentIdArray and add a student property, which is an array, where every element is the whole student element of the studentdata array
+
+  for (var i = 0; i < projectdata.length; i++) {
+    for (var j = 0; j < studentdata.length; j++) {
+      if (projectdata[i].studentId.includes(studentdata[j].studentId)) {
+        projectdata[i].students = [];
+        projectdata[i].students.push(studentdata[j]);
       }
     }
-}
+  }
+  console.log(projectdata);
 
-entryData = []; // sort it however
-projects = [];
+  // var selected = "fashion";
 
-// main
-$(document).ready(function() {
+  var container = ["container"];
+  var containers = ["nav", "hero", "grid-container", "project", "footer"];
 
-    onURLChange();  // init div w first set of elements
-    // Ajax-ish HTML rewriting kills navigation buttons.  Hardcode for each element set manually.
-    $(window).on('popstate', onURLChange)
-    
-    for (var item in window) {
-        // find entries in global namespace
-        if (/^N([0-9]{8})$/.test(item)) {
-            console.log("Found: " + item);
-            entryData.push(item);
-        }
-    }
-   
-    // assemble list of projects
-    entryData.forEach(function(uid) {
-      window[uid].work.forEach(function(proj, idx){
-        proj.uid = uid;  // add unique key
-        proj.idx = idx;
-        projects.push(proj);
-      });
+  d3.select("body")
+    .selectAll("div")
+    .data(container)
+    .enter()
+    .append("div")
+    .attr("class", function(d) {
+      return d;
     });
-    
-    onScroll() // on-scroll functionality  
-    
-    // $("#people").load("assets/startbootstrap-3-col-portfolio-gh-pages/index-ppl.html", entriesLoaded);
-    
-    /* 
-    url = window.location.href; 
-    if (url.endsWith("#work") && curProj == 0) // go back to top on reload
-      window.location.href = url.slice(0,-5);
-    $(this).scrollTo(0);
-    */
-    
-    //window.onhashchange = function() {alert("hi");}
-});
 
+  d3.select(".container")
+    .selectAll("div")
+    .data(containers)
+    .enter()
+    .append("div")
+    .attr("class", function(d) {
+      return d;
+    });
+
+  var div = d3
+    .select(".grid-container")
+    .selectAll("div")
+    .data(projectdata)
+    .enter()
+    .append("div")
+    .classed("project", true)
+    .attr("id", function(d) {
+      return d.projectId;
+    });
+
+  // Highlighting / hiding
+
+  // div.classed("hide", function(d) {
+  //   if (d.topics.includes(selected)) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  //
+  // })
+
+  div
+    .append("img")
+    .attr("width", "100%")
+    .attr("src", function(d) {
+      return "assets/img_work/" + d.photoUrl;
+    });
+
+  div
+    .append("div")
+    .classed("overlay", true)
+    .append("h5")
+    .text(function(d) {
+      return d.heading;
+    })
+    .classed("project-title", true);
+
+  // div
+  //   .append("h6")
+  //   .text(function(d) {
+  //     return d.subHead;
+  //   })
+  //   .classed("project-title", true);
+}

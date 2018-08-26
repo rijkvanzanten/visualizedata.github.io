@@ -1,0 +1,198 @@
+[
+{
+  "studentId":"N00632134",
+  "projectId": ["P00001"],
+  "photoName": "emily.jpeg",
+  "name": "Emily Chu",
+  "bio": "Data Visualization Engineer focusing on interactivity, data in UX, and visualizing machine learning algorithms. Enjoys culture, healthcare, new media and computational art. ",
+  "education":"",
+  "role": "student",
+  "contact" :{
+    "email": "3milychu@gmail.com",
+    "gitHub": "3milychu",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://3milychu.github.io"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00139664",
+  "projectId": ["P00002"],
+  "photoName": "julian.jpg",
+  "name": "Julian Lange",
+  "bio": "Julian is a graduate of the M.S. Data Visualization program at the Parsons School of Design. He received his Ph.D. in Biology from M.I.T. in 2008 and completed a postdoctoral fellowship at Memorial Sloan Kettering Cancer Center. He has published over 20 articles about his biomedical research. Julian's goal is to tell stories with graphics to new and broader audiences.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "julianhlange@gmail.com",
+    "gitHub": "julianhlange",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://www.julianhlange.com/"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00378909",
+  "projectId": ["P00003"],
+  "photoName": "max.jpg",
+  "name": "Max Carradine",
+  "bio": "Max is a 2018 Parsons MS Data Viz graduate. His research interests include government, politics and public health.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "carradim@newschool.edu",
+    "gitHub": "",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://mbcarradine.github.io/"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00634970",
+  "projectId": ["P00004"],
+  "photoName": "ellie.jpg",
+  "name": "Ellie Frymire",
+  "bio": "Ellie Frymire works at the intersection of coding, analytics, and design \u2013 creating visualizations to give viewers a deeper understanding of complex ideas. After graduating from Villanova University in 2013 with a degree in mathematics and a minor in business, she spent 4 years with Deloitte Consulting, working in the technology and analytics practice. As a M.S. candidate in Data Visualization at Parsons School of Design, Ellie is building upon her lifelong passion for numbers, patterns, and art.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "elliefrymire@gmail.com",
+    "gitHub": "efrymire",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://www.elliefrymire.com"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00601197",
+  "projectId": ["P00005"],
+  "photoName": "will.jpg",
+  "name": "Will Su",
+  "bio": "Will Su is a designer who is passionate about coding. His work focuses on presenting data efficiently and beautifully with fluid interactivity. He is currently pursuing an MS in data visualization at the Parsons School of Design in New York, where he creates work that sits at the intersection of design, statistics, and computer science.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "suj197@newschool.edu",
+    "gitHub": "jiahao01121",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "http://willsu.io/"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00633918",
+  "projectId": ["P00006"],
+  "photoName": "yicen.jpeg",
+  "name": "Yicen Shi",
+  "bio": "I am a passionate visual storyteller with a quantitative background in Mathematics.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "shiy918@newschool.edu",
+    "gitHub": "shiy918",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://shiy918.myportfolio.com/"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00530544",
+  "projectId": ["P00007"],
+  "photoName": "benz.jpeg",
+  "name": "Benzamin Yi",
+  "bio": "A qualitative data visualization designer with an interest in topics of politics, economics, and philosophy.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "benzaminyi@gmail.com",
+    "gitHub": "benzyi",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "http://benzaminyi.com"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00635146",
+  "projectId": ["P00008"],
+  "name": "George Sieniawski",
+  "bio": "George specializes in exploratory data analysis using Python and R, interactive data visualization in D3.js, and p5.js, and web-based cartography with Leaflet.js and Mapbox. His professional background includes over seven years working as an analyst at an SEC-regulated research firm serving a wide variety of institutional investor clients that had net portfolio exposure to the energy and industrials sector. Earlier in his career, he gained valuable experience in civic engagement/public service as an unpaid summer intern assisting staff attorneys at one of the nation's busiest local law enforcement agencies with NY state and federal appeals over the course of three consecutive summers. In addition to holding a B.Sc. in Foreign Service from the Georgetown University School of Foreign Service, he will be completing his M.Sc. in Data Visualization from the Parsons School of Design Faculty of Art, Media, and Technology in 2018.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "sieng146@newschool.edu",
+    "gitHub": "sieng146",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://www.linkedin.com/in/georgesieniawski/"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00634972",
+  "projectId": ["P00009"],
+  "photoName": "rye.jpg",
+  "name": "Rye Zupancis",
+  "bio": "Rye is a data visualization expert with a professional background in web development and motion design. She holds a MS in Data Visualization from Parsons and a BFA in sculpture and digital art from Carnegie Mellon.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "ryezzz@gmail.com",
+    "gitHub": "ryezzz",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "http://www.pikacreative.com"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00646008",
+  "projectId": ["P00010"],
+  "photoName": "ryan.jpg",
+  "name": "Ryan Best",
+  "bio": "I am excited about using technology and design to make data visual, beautiful, and intuitive - allowing our data to tell us stories, help us understand complex information, and inform our decision-making. As a prospective Masters of Science candidate in the Data Visualization program at Parsons School of Design, I've learned how to design and build data visualizations to engage an audience and communicate effectively with data. I've hunted down, cleaned, and aggregated raw data sets with JavaScript and Python. I've designed visualizations, interfaces, and interactions using Sketch and Adobe Illustrator. I've generated webpage prototypes implementing front-end web development technologies of HTML/CSS and JavaScript libraries like d3, p5, and jQuery. But most importantly, I've renewed my excitement and passion in making data visual, beautiful, and intuitive to tell stories and help make complex decisions with data through web development and design.",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "ryanabest@gmail.com",
+    "gitHub": "ryanabest",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://ryanabest.github.io/"
+  },
+  "focus": []
+},
+
+{
+  "studentId": "N00628774",
+  "projectId": ["P00011"],
+  "photoName": "aucher.JPG",
+  "name": "Aucher Serr",
+  "bio": "Aucher's insatiable curiosity and passion for data and design brought her to the Data Visualization M.Sc. program. Prior to her current graduate work, Aucher studied Cognitive Science and Philosophy at UC Berkeley, followed by a few years in Tel Aviv at a startup called Riskified. Throughout her career, Aucher has emphasized a deeply embodied approach to her work \u2014 always striving to ground and situate her projects in meaningful ways without oversimplifying the underlying data. ",
+  "education":"",
+  "role": "student",
+  "contact":{
+    "email": "aucher.serr@gmail.com",
+    "gitHub": "auchers",
+    "linkedIn": "",
+    "twitter": "",
+    "personalUrl": "https://www.aucherserr.com/"
+  },
+  "focus": []
+}
+]
