@@ -37,7 +37,7 @@ group = `
 
       <!-- Page Heading -->
       <h1 class="my-4">Data Visualization @ The New School<br>
-        <small>Arts Media & Technology MS</small>
+        <small>Art, Media, & Technology MS</small>
       </h1>
 
       <div class="row">
