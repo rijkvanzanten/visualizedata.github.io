@@ -1,0 +1,24 @@
+{
+  "studentID": "N00632134",
+  "photoName": "emily.jpeg",
+  "gitHub": "3milychu",
+  "name": "Emily Chu",
+  "email": "3milychu@gmail.com",
+  "bio":
+    "Data Visualization Engineer focusing on interactivity, data in UX, and visualizing machine learning algorithms. Enjoys culture, healthcare, new media and computational art. ",
+  "work": [
+    {
+      "workUrl": "https://3milychu.github.io/clusteringfashion/",
+      "year": 2018,
+      "subHead": "The Data Behind the Forms We Wear",
+      "desc":
+        "This is a project that seeks to understand how popular forms in clothing originated from humble beginnings and gained momentum over time. Machine learning was used to extract form from images at the MET's Costume Institute. Items were then clustered with kmeans, a statistical model that can be used to train machines to predict the items that are most similar from the information given.",
+      "metaData": ["major studio 1", "Met Museum"],
+      "heading": "Forms of Attraction",
+      "photoUrl": "emily1.jpg",
+      "month": 5
+    }
+  ],
+  "role": "student",
+  "personalUrl": "https://3milychu.github.io"
+}
