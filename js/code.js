@@ -63,7 +63,9 @@ function analyze(error, projects, students) {
     .attr(
       "data-type",
       ' [ "On average, how many people do you walk past per day in Manhattan?", "How many rats are living in New York City?", "How many New Yorkers speak a language other than English?", "What is the pattern of gentrification in Brooklyn?","Where can I buy the best croissant in this crazy city?" ] '
-    );
+    )
+    .insert("span")
+    .attr("class", "wrap");
 
   d3.select(".hero-parallax")
     .append("img")
