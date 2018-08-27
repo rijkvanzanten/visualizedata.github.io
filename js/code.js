@@ -83,6 +83,17 @@ function analyze(error, projects, students) {
     .text("Data Visualization")
     .attr("class", "heading");
 
+  var foot = d3
+    .select(".footer")
+    .append("div")
+    .attr("class", "foot-content");
+
+  foot
+    .append("p")
+    .text(
+      "We are the students and alumni of the Data Visualization MS program at Parsons School of Design in New York. Enjoy yourselves."
+    );
+
   var div = d3
     .select(".grid-container")
     .selectAll("div")
