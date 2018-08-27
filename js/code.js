@@ -31,9 +31,8 @@ function analyze(error, projects, students) {
   console.log(projectdata);
 
   // var selected = "fashion";
-
   var container = ["container"];
-  var containers = ["nav", "hero", "grid-container", "project", "footer"];
+  var containers = ["hero", "banner", "grid-container", "footer"];
 
   d3.select("body")
     .selectAll("div")
@@ -52,6 +51,50 @@ function analyze(error, projects, students) {
     .attr("class", function(d) {
       return d;
     });
+
+  d3.select(".hero")
+    .insert("div")
+    .attr("class", "hero-parallax")
+    .insert("div")
+    .attr("class", "hero-text")
+    .insert("h1")
+    .attr("class", "typewrite")
+    .attr("data-period", "1000")
+    .attr(
+      "data-type",
+      ' [ "On average, how many people do you walk past per day in Manhattan?", "How many rats are living in New York City?", "How many New Yorkers speak a language other than English?", "What is the pattern of gentrification in Brooklyn?","Where can I buy the best croissant in this crazy city?" ] '
+    )
+    .insert("span")
+    .attr("class", "wrap");
+
+  d3.select(".hero-parallax")
+    .append("img")
+    .attr("class", "scroll")
+    .attr("src", "../assets/down.svg");
+
+  var banner = d3.select(".banner");
+
+  banner
+    .append("img")
+    .attr("width", "280px")
+    .attr("src", "../assets/ParsonFont.png")
+    .attr("class", "logo");
+
+  banner
+    .append("h2")
+    .text("Data Visualization")
+    .attr("class", "heading");
+
+  var foot = d3
+    .select(".footer")
+    .append("div")
+    .attr("class", "foot-content");
+
+  foot
+    .append("p")
+    .text(
+      "We are the students and alumni of the Data Visualization MS program at Parsons School of Design in New York. Enjoy yourselves."
+    );
 
   var div = d3
     .select(".grid-container")
